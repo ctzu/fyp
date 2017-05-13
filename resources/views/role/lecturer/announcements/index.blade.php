@@ -1,0 +1,49 @@
+@extends('layouts.app')
+
+@section('page-title', 'Senarai Hebahan')
+
+@section('page-button')
+<a class="btn btn-primary" href="{{ route('pensyarah.hebahan.create') }}">Hebahan Baru</a>
+@endsection
+
+@section('content')
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nama Aktiviti</th>
+                    <th>Dicipta pada</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse($announcements as $announcement)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $announcement->title }}</td>
+                        <td>{{ $announcement->created_at->diffForHumans() }}</td>
+                        <td>
+                            <span class="pull-right">
+                                <a class="btn btn-info btn-sm" href="{{ route('pensyarah.hebahan.show', $announcement) }}">Papar</a>
+                                <a class="btn btn-warning btn-sm" href="{{ route('pensyarah.hebahan.edit', $announcement) }}">Kemaskini</a>
+                                <form action="{{ route('pensyarah.hebahan.destroy', $announcement) }}" method="POST" style="display:inline !important;">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                </form>
+                            </span>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="5"><strong>Tiada data dijumpai.</strong></td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+        {{ $announcements->links() }}
+    </div>
+</div>
+@endsection
