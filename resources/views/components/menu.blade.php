@@ -13,6 +13,8 @@
             <ul class="dropdown-menu" role="menu">
                 <li><a href="{{ route('pentadbir.pelajar.index') }}">Pelajar</a></li>
                 <li><a href="{{ route('pentadbir.pensyarah.index') }}">Pensyarah</a></li>
+                <li><a href="{{ route('pentadbir.tadbir.index') }}">Pentadbir</a></li>
+                <li><a href="{{ route('pentadbir.kelab.index') }}">Kelab</a></li>
             </ul>
         </li>
     @endrole

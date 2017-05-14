@@ -26,6 +26,7 @@
                         <td>{{ $activity->updated_at->diffForHumans() }}</td>
                         <td>
                             <span class="pull-right">
+                            <a class="btn btn-info btn-sm" href="{{ route('pensyarah.papar', $activity) }}">Papar</a>
                                 <a class="btn btn-info btn-sm" href="{{ route('pensyarah.aktiviti.show', $activity) }}">Pengesahan</a>
                             </span>
                         </td>

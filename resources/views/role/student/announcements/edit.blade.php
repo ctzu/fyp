@@ -43,13 +43,13 @@
             <div class="form-group {{ $errors->has('perincian') ? 'has-error' : '' }}">
                 <label for="perincian" class="col-md-2 control-label">Perincian Hebahan</label>
                 <div class="col-md-6">
-                    <textarea  class="form-control" id="perincian" type="text" name="perincian" value="{{ old('perincian', $announcement->name) }} row="6" maxlength="500">
+                    <textarea  class="form-control" id="perincian" type="text" name="perincian" row="6">{{old('perincian', $announcement->description)}}</textarea>
                     @if ($errors->has('perincian'))
                         <span class="help-block">
                             <strong>{{ $errors->first('perincian') }}</strong>
                         </span>
                     @endif
-                    </textarea>
+                    
                 </div>
             </div>
 

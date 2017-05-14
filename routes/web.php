@@ -37,6 +37,8 @@ Route::group(['prefix' => 'pelajar', 'as' => 'pelajar.', 'namespace' => 'Student
 Route::group(['prefix' => 'pensyarah', 'as' => 'pensyarah.', 'namespace' => 'Lecturer'], function () {
     // Urus Aktiviti
     Route::resource('aktiviti', 'ActivitiesController');
+    //Urus Papar Merit
+    Route::get('aktiviti/{aktiviti}/papar', 'ActivitiesController@papar')->name('papar');
     //Urus Hebahan
     Route::resource('hebahan', 'AnnouncementsController');
     // Muat Turun Fail
@@ -51,4 +53,8 @@ Route::group(['prefix' => 'pentadbir', 'as' => 'pentadbir.', 'namespace' => 'Adm
     Route::resource('pelajar', 'StudentsController');
     // Urus Pensyarah
     Route::resource('pensyarah', 'LecturersController');
+    // Urus Pentadbir
+    Route::resource('tadbir', 'AdministratorsController');
+    // Urus Kelab
+    Route::resource('kelab', 'ClubsController');
 });

@@ -160,6 +160,19 @@ class ActivitiesController extends Controller
         flash('Maklumat aktiviti berjaya dikemaskini.', 'success')->important();
         return redirect()->route('pelajar.aktiviti.index');
     }
+
+    public function resultmerit($id)
+    {
+        $activity       = Activity::findOrFail($id);
+        $club_id                       = $activity->nama_kelab;
+        $name                          = $request->nama_aktiviti;
+        $place                         = $request->tempat_aktiviti;
+        $date                          = $request->tarikh_aktiviti;
+        $activity_level_id             = $request->peringkat;
+        $activity_achievement_id       = $request->pencapaian;
+        $activity_committee_id         = $request->jawatankuasa;
+
+    }
     /**
      * Remove the specified resource from storage.
      *

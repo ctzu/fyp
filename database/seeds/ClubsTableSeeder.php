@@ -19,7 +19,7 @@ class ClubsTableSeeder extends Seeder
             'Video Innovation',
             'Open Source(NUMOSS)',
             'Lensa Informatics',
-            'iBusiness Innovatiove',
+            'iBusiness Innovative',
             'Cyber Ethics',
             'Intelligent Machines',
             'Programming Challenge Club',

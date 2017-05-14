@@ -59,6 +59,31 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the administrator associated with the user.
+     */
+    public function administrator()
+    {
+        return $this->hasOne(Administrator::class, 'user_id');
+    }
+
+    /**
+     * Get the student associated with the user.
+     */
+    public function student()
+    {
+        return $this->hasOne(Student::class, 'user_id');
+    }
+
+    /**
+     * Get the student associated with the user.
+     */
+    public function club()
+    {
+        return $this->hasOne(Club::class, 'name');
+    }
+
+
+    /**
      * Get the a activities associated with the user.
      */
     public function activities()

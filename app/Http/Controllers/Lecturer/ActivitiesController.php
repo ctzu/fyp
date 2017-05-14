@@ -26,7 +26,7 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
-        $activities = Activity::latest()->paginate();
+        $activities = Activity::where('is_approved', false)->latest()->paginate();
         return view('role.lecturer.activities.index', compact('activities'));
     }
 
@@ -63,6 +63,17 @@ class ActivitiesController extends Controller
         $markah = $activity->user()->first()->markahMerit()->where('activity_id', $activity->id)->first();
         return view('role.lecturer.activities.show', compact('activity', 'markah'));
     }
+        /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function papar($id)
+    {
+        $activity = Activity::with('club', 'level', 'achievement', 'committee', 'status', 'files', 'user.markahMerit')->findOrFail($id);
+        return view('role.lecturer.activities.papar', compact('activity'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -93,7 +104,8 @@ class ActivitiesController extends Controller
         $activity = Activity::findOrFail($id);
         // Kemaskini aktiviti
         $activity->update([
-            'activity_status_id' => 2
+            'activity_status_id' => 2,
+            'is_approved' => true
         ]);
         // Kemaskini markah jika wujud, jika tidak create baru
         $markah = MarkahMerit::firstOrCreate(

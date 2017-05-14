@@ -20,7 +20,8 @@ class Activity extends Model
         'activity_achievement_id',
         'activity_committee_id',
         'activity_status_id',
-        'created_by'
+        'created_by',
+        'is_approved'
     ];
 
     /**

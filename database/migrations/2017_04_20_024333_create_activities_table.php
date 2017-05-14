@@ -24,6 +24,7 @@ class CreateActivitiesTable extends Migration
             $table->unsignedInteger('activity_committee_id')->index(); // Jawatankuasa
             $table->unsignedInteger('activity_status_id')->index(); // Status
             $table->unsignedInteger('created_by')->index();
+            $table->boolean('is_approved')->default(false);
             $table->timestamps();
 
             $table->foreign('club_id')->references('id')->on('clubs')->onUpdate('cascade')->onDelete('cascade');
