@@ -28,7 +28,7 @@ class ClubsController extends Controller
      */
     public function index()
     {
-        $clubs = Club::all();
+        $clubs = Club::with('lecturer')->get();
         return view('role.admin.clubs.index', compact('clubs'));
     }
 
@@ -39,7 +39,8 @@ class ClubsController extends Controller
      */
     public function create()
     {
-        return view('role.admin.clubs.create');
+        $lecturers = User::where('role', 'Lecturer')->get();
+        return view('role.admin.clubs.create', compact('lecturers'));
     }
 
     /**
@@ -51,11 +52,13 @@ class ClubsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nama' => 'required|string|max:255',            
+            'nama' => 'required|string|max:255', 
+            'lecturer' => 'required'          
         ]);
 
         $club                           = new Club;
         $club->name                     = $request->nama;
+        $club->lecturer_id              = $request->lecturer;
         $club->save();
 
         flash('Nama kelab berjaya disimpan.', 'success')->important();
@@ -83,7 +86,9 @@ class ClubsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $club = Club::findOrFail($id);
+        $lecturers = User::where('role', 'Lecturer')->get();
+        return view('role.admin.clubs.edit', compact('club', 'lecturers'));
     }
 
     /**
@@ -95,7 +100,18 @@ class ClubsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required|string|max:255', 
+            'lecturer' => 'required'          
+        ]);
+
+        $club                           = Club::findOrFail($id);
+        $club->name                     = $request->nama;
+        $club->lecturer_id              = $request->lecturer;
+        $club->save();
+
+        flash('Nama kelab berjaya disimpan.', 'success')->important();
+        return redirect()->route('pentadbir.kelab.index');
     }
 
     /**

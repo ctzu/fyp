@@ -46,5 +46,16 @@ class AccountsTableSeeder extends Seeder
         Lecturer::create([
             'user_id' => $pensyarah->id
         ]);
+
+        $pensyarah2 = User::create([
+            'name'     => 'Dr Dian',
+            'email'    => 'dian@gmail.com',
+            'password' => bcrypt('password'),
+            'role'     => 'Lecturer'
+        ]);
+
+        Lecturer::create([
+            'user_id' => $pensyarah2->id
+        ]);
     }
 }

@@ -28,8 +28,11 @@ class ClubsTableSeeder extends Seeder
 
         foreach ($data as $datum) {
             Club::create([
-                'name' => $datum
+                'name' => $datum,
+                'lecturer_id' => rand(3, 4)
             ]);
+
+
         }
     }
 }

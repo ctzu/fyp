@@ -14,6 +14,7 @@
                 <tr>
                     <th>#</th>
                     <th>Nama Kelab</th>
+                    <th>Nama Pensyarah</th>
                     <th>Dicipta pada</th>
                     <th>&nbsp;</th>
                 </tr>
@@ -23,9 +24,10 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $club->name }}</td>
+                        <td>{{ $club->lecturer->name or ''}}</td>
                         <td>{{ $club->created_at->diffForHumans() }}</td>
                         <td>
-
+                        <a class="btn btn-info" href="{{ route('pentadbir.kelab.edit', $club) }}">Edit</a>
                         </td>
                     </tr>
                 @empty
