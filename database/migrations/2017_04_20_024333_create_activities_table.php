@@ -25,6 +25,7 @@ class CreateActivitiesTable extends Migration
             $table->unsignedInteger('activity_status_id')->index(); // Status
             $table->unsignedInteger('created_by')->index();
             $table->boolean('is_approved')->default(false);
+            //$table->unsignedInteger('student_status_id')->index();//status pelajar
             $table->timestamps();
 
             $table->foreign('club_id')->references('id')->on('clubs')->onUpdate('cascade')->onDelete('cascade');
@@ -33,6 +34,7 @@ class CreateActivitiesTable extends Migration
             $table->foreign('activity_committee_id')->references('id')->on('activity_committees')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('activity_status_id')->references('id')->on('activity_statuses')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('student_status_id')->references('id')->on('student_statuses')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

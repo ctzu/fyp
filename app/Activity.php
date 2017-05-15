@@ -21,7 +21,8 @@ class Activity extends Model
         'activity_committee_id',
         'activity_status_id',
         'created_by',
-        'is_approved'
+        'is_approved',
+        'student_status_id'
     ];
 
     /**
@@ -62,6 +63,14 @@ class Activity extends Model
     public function status()
     {
         return $this->belongsTo(ActivityStatus::class, 'activity_status_id');
+    }
+
+    /**
+     * Get the status pelajar.
+     */
+    public function statuspelajar()
+    {
+        return $this->belongsTo(StudentStatus::class, 'student_status_id');
     }
 
     /**

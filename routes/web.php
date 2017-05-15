@@ -23,19 +23,26 @@ Route::get('home', 'HomeController@index');
 Route::group(['prefix' => 'pelajar', 'as' => 'pelajar.', 'namespace' => 'Student'], function () {
     // Urus Aktiviti
     Route::resource('aktiviti', 'ActivitiesController');
+    //Urus Papar Merit
+    Route::get('aktiviti/{aktiviti}/show', 'ActivitiesController@show')->name('show');
     //Urus Hebahan
     Route::resource('hebahan', 'AnnouncementsController');
+    // Urus Transkrip
+    Route::resource('transkrip', 'TranscriptsController');
+    //Urus Muat Turun Transkrip
+    Route::get('pdf/resit', 'TranscriptsController@showReceiptPDF')->name('showReceiptPDF');
     // Muat Turun Fail
     Route::get('fail/{id}/muat-turun', 'FilesController@download')->name('fail.download');
     // Delete Fail
     Route::delete('fail/{id}', 'FilesController@destroy')->name('fail.destroy');
+    
 });
 
 /**
  * Routing untuk peranan pensyarah.
  */
 Route::group(['prefix' => 'pensyarah', 'as' => 'pensyarah.', 'namespace' => 'Lecturer'], function () {
-    // Urus Aktiviti
+    // Urus transkrip
     Route::resource('aktiviti', 'ActivitiesController');
     //Urus Papar Merit
     Route::get('aktiviti/{aktiviti}/papar', 'ActivitiesController@papar')->name('papar');
@@ -43,6 +50,7 @@ Route::group(['prefix' => 'pensyarah', 'as' => 'pensyarah.', 'namespace' => 'Lec
     Route::resource('hebahan', 'AnnouncementsController');
     // Muat Turun Fail
     Route::get('fail/{id}/muat-turun', 'FilesController@download')->name('fail.download');
+
 });
 
 /**

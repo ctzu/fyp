@@ -2,6 +2,7 @@
     @role('Student')
         <li><a href="{{ route('pelajar.aktiviti.index') }}">Aktiviti</a></li>
         <li><a href="{{ route('pelajar.hebahan.index') }}">Hebahan</a></li>
+        <li><a href="{{ route('pelajar.transkrip.index') }}">Transkrip Kokurikulum</a></li>
     @endrole
 
     @role('Administrator')

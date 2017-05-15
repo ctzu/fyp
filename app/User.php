@@ -106,4 +106,5 @@ class User extends Authenticatable
     {
         return $this->hasOne(MarkahMerit::class, 'user_id');
     }
+
 }

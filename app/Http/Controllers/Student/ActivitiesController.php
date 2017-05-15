@@ -9,6 +9,7 @@ use App\ActivityLevel;
 use App\ActivityCommittee;
 use App\ActivityAchievement;
 use App\ActivityStatus;
+use Barryvdh\DomPDF\PDF;
 
 class ActivitiesController extends Controller
 {
@@ -31,6 +32,12 @@ class ActivitiesController extends Controller
         $activities = auth()->user()->activities()->latest()->paginate();
         return view('role.student.activities.index', compact('activities'));
     }
+
+    // public function transcript()
+    // {
+    //     $transcripts = auth()->user()->activities()->latest()->paginate();
+    //     return view('role.student.transkrip.index', compact('transcripts'));
+    // }
     /**
      * Show the form for creating a new resource.
      *
@@ -101,6 +108,12 @@ class ActivitiesController extends Controller
         $activity = Activity::with('club', 'level', 'achievement', 'committee', 'status', 'files', 'user')->findOrFail($id);
         return view('role.student.activities.show', compact('activity'));
     }
+
+        public function papar($id)
+    {
+        $activity = Activity::with('club', 'level', 'achievement', 'committee', 'status', 'files', 'user.markahMerit')->findOrFail($id);
+        return view('role.student.activities.papar', compact('activity'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -160,19 +173,13 @@ class ActivitiesController extends Controller
         flash('Maklumat aktiviti berjaya dikemaskini.', 'success')->important();
         return redirect()->route('pelajar.aktiviti.index');
     }
-
-    public function resultmerit($id)
-    {
-        $activity       = Activity::findOrFail($id);
-        $club_id                       = $activity->nama_kelab;
-        $name                          = $request->nama_aktiviti;
-        $place                         = $request->tempat_aktiviti;
-        $date                          = $request->tarikh_aktiviti;
-        $activity_level_id             = $request->peringkat;
-        $activity_achievement_id       = $request->pencapaian;
-        $activity_committee_id         = $request->jawatankuasa;
-
+    
+    public function showReceipt($id){
+        $activity = Activity::findOrFail($id);
+        return view('role.student.activity.transcript',compact('activity'));
     }
+
+    
     /**
      * Remove the specified resource from storage.
      *

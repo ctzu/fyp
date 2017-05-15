@@ -15,6 +15,7 @@ class CreateStudentStatusesTable extends Migration
     {
         Schema::create('student_statuses', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('label_pelajar');
             $table->timestamps();
         });
     }
