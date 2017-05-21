@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\SMPUser;
 use App\Lecturer;
 
 class AccountsTableSeeder extends Seeder
@@ -57,5 +58,16 @@ class AccountsTableSeeder extends Seeder
         Lecturer::create([
             'user_id' => $pensyarah2->id
         ]);
+
+        /**
+         * Cipta akaun pelajar
+         */
+        $pelajar = SMPUser::create([
+            'name'     => 'Siti Zuraidah',
+            'email'    => 'ctzu@gmail.com',
+            'password' => bcrypt('password'),
+            'role'     => 'Student'
+        ]);
+
     }
 }
