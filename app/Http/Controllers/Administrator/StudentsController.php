@@ -62,7 +62,7 @@ class StudentsController extends Controller
             'role'     => 'Student'
         ]);
 
-        $user->lecturer()->create([
+        $user->student()->create([
             'user_id'     => $user->id,
             'students_no'  => $request->no_pelajar
         ]);
