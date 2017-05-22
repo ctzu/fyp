@@ -33,7 +33,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="5"><strong>Tiada data dijumpai.</strong></td>
+                        <td colspan="6"><strong>Tiada data dijumpai.</strong></td>
                     </tr>
                 @endforelse
             </tbody>
