@@ -88,4 +88,12 @@ class Activity extends Model
     {
         return $this->hasMany(File::class, 'activity_id');
     }
+
+    /**
+     * Get markah.
+     */
+    public function markahMerit()
+    {
+        return $this->hasOne(MarkahMerit::class, 'activity_id');
+    }
 }
