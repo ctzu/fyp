@@ -22,8 +22,8 @@
                 @forelse ($transcripts as $transcript)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $transcript->activity->name }}</td>
-                        <td>{{ $transcript->activity->committee->name }}</td>
+                        <td>{{ $transcript->activity->name or '' }}</td>
+                        <td>{{ $transcript->activity->committee->name or '' }}</td>
                         <td>{{ $transcript->markah or 'Tiada Markah' }}</td>
                     </tr>
                 @empty
