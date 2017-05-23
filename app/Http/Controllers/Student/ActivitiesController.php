@@ -109,11 +109,11 @@ class ActivitiesController extends Controller
         return view('role.student.activities.show', compact('activity'));
     }
 
-        public function papar($id)
-    {
-        $activity = Activity::with('club', 'level', 'achievement', 'committee', 'status', 'files', 'user.markahMerit')->findOrFail($id);
-        return view('role.student.activities.papar', compact('activity'));
-    }
+    // public function papar($id)
+    // {
+    //     $activity = Activity::with('club', 'level', 'achievement', 'committee', 'status', 'files', 'user.markahMerit')->findOrFail($id);
+    //     return view('role.student.activities.papar', compact('activity'));
+    // }
     /**
      * Show the form for editing the specified resource.
      *
@@ -173,13 +173,13 @@ class ActivitiesController extends Controller
         flash('Maklumat aktiviti berjaya dikemaskini.', 'success')->important();
         return redirect()->route('pelajar.aktiviti.index');
     }
-    
+
     public function showReceipt($id){
         $activity = Activity::findOrFail($id);
         return view('role.student.activity.transcript',compact('activity'));
     }
 
-    
+
     /**
      * Remove the specified resource from storage.
      *
