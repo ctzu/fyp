@@ -34,6 +34,10 @@ class AccountsTableSeeder extends Seeder
             'role'     => 'Student'
         ]);
 
+        $pelajar->student()->create([
+            'students_no' => 'A149478'
+        ]);
+
         /**
          * Cipta akaun pensyarah
          */
