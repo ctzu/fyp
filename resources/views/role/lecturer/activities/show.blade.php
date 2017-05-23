@@ -86,6 +86,18 @@
         </table>
         <button class="btn btn-primary" type="submit">Sahkan</button>
     </form>
+    <div class="container">
+
+            <hr>
+            <!— Footer —>
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                    <p class="copyright text-muted small">2017 &copy; e-Merit FTSM UKM. Hak Cipta Terpelihara</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
 </div>
 @endsection

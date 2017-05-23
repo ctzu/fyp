@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Announcement;
 use App\Club;
+use App\File;
 
 class AnnouncementsController extends Controller
 {
@@ -122,6 +123,7 @@ class AnnouncementsController extends Controller
         $announcement->dateP                    = $request->tarikh_program;
         $announcement->created_by               = auth()->id();
         $announcement->save();
+
 
         flash('Maklumat hebahan berjaya dikemaskini.', 'success')->important();
         return redirect()->route('pelajar.hebahan.index');

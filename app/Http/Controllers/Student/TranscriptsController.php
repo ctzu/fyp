@@ -13,6 +13,7 @@ use App\ActivityAchievement;
 use App\ActivityStatus;
 use App\StudentStatus;
 use Barryvdh\DomPDF\PDF;
+use Illuminate\Support\Facades\Auth;
 
 
 class TranscriptsController extends Controller
@@ -36,7 +37,7 @@ class TranscriptsController extends Controller
     {
         // $transcripts = auth()->user()->transcripts()->latest()->paginate();
         
-        $transcripts = Activity::all();
+        $transcripts = Activity::with('user')->where('created_by',Auth::user()->id)->get();
         // dd($transcripts);
         return view('role.student.transcripts.index', compact('transcripts'));
     }
@@ -75,7 +76,7 @@ class TranscriptsController extends Controller
     }
 
     public function showReceiptPDF() {
-        $activities = Activity::all();
+        $activities = Activity::with('user')->where('created_by',Auth::user()->id)->get();
         $pdf = app('dompdf.wrapper');
         $pdf->loadView('role.student.show',compact('activities'));
         return $pdf->stream('show.pdf');

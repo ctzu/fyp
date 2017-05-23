@@ -53,23 +53,23 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 <li>
-                        <a href="#about">About</a>
+                        <a href="#about">Tentang Kami</a>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="#services">Perkhidmatan</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="#contact">Hubungi Kami</a>
                     </li>
                     <li>
                     @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a class="navbar-brand topnav" href="{{ url('/home') }}"><span class="glyphicon glyphicon-home">Home</span></a>
+                        <a class="navbar-brand topnav" href="{{ url('/home') }}"><span class="glyphicon glyphicon-home">Laman Utama</span></a>
                     @else
-                        <a class="navbar-brand topnav" href="{{ url('/login') }}">Login</a>
+                        <a class="navbar-brand topnav" href="{{ url('/login') }}">Log Masuk</a>
                         <a class="navbar-brand topnav">|</a>
-                        <a class="navbar-brand topnav" href="{{ url('/register') }}">Register</a>
+                        <a class="navbar-brand topnav" href="{{ url('/register') }}">Daftar Masuk</a>
                     @endif
                 </div>
                 </li>
@@ -176,19 +176,20 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
+                <div class="col-lg-6 col-md-offset-0">
+                    <h3>Hubungi Kami:</h3><iframe width="100%" height="240" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/d/embed?mid=z8QR_jCyvvqY.kq99_TNSbYXw"></iframe>
+
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-md-offset-7">
                     <ul class="list-inline banner-social-buttons">
                         <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            <a href="https://twitter.com/FTSMukmalaysia" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                         </li>
                         <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            <a href="https://www.facebook.com/FTSM-UKM-152825994842671/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            <a href="https://www.instagram.com/computing.ftsmukm/" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
                         </li>
                     </ul>
                 </div>
@@ -205,24 +206,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                <div id="column2">
+      <div class="subnav2">
+        <h2>Maklumat</h2>
+        <p>Untuk sebarang pertanyaan atau cadangan mengenai perkara yang berikut:</p>
+        
+        <ul>
+        <li><a href="#">Email</a></li>
+        <p>Webmaster : webmaster@ftsm.ukm.my<br>
+        ICT Support : ictsupport@ftsm.ukm.my</p>
+        <li><a href="#">Dean's Offices</a></li>
+         <p>Tel.:+6 03 - 8921 6141<br>
+         Fax.:+6 03 - 8925 6732</p>
+        <li><a href="#">Undergraduate Management Unit</a></li>
+         <p>Tel.:+6 03 - 8921 6183 / 6789 <br>
+         Fax.:+6 03 - 8921 6184</p>
+         <li><a href="#">ICT Helpdesk</a></li>
+         <p>Tel.:+6 03 - 8921 6666</p>
+         </ul>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+                    <p class="copyright text-muted small">2017 &copy; e-Merit FTSM UKM. Hak Cipta Terpelihara</p>
                 </div>
             </div>
         </div>

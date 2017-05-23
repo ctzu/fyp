@@ -52,9 +52,9 @@ class NewAccountSuccessfullyRegistered extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line("Username: $this->email")
-                    ->line("Password: $this->password")
-                    ->line('Thank you for using our eMerit FTSM');
+                    ->line("Nama Pengguna: $this->email")
+                    ->line("Kata Laluan: $this->password")
+                    ->line('Terima kasih kerana menggunakan Sistem eMerit FTSM UKM');
     }
 
     /**

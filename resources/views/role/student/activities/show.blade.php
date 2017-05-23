@@ -72,7 +72,20 @@
                 <div class="col-md-offset-2 col-md-10">
                     <a class="btn btn-primary btn-sm" href="{{ route('pelajar.aktiviti.index', $activity) }}">OK</a>
                 </div>
-            </div>     
+            </div>  
+
+            <div class="container">
+
+            <hr>
+            <!— Footer —>
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                    <p class="copyright text-muted small">2017 &copy; e-Merit FTSM UKM. Hak Cipta Terpelihara</p>
+                    </div>
+                </div>
+            </footer>
+            </div>   
     </div>
 </div>
 @endsection

@@ -30,7 +30,7 @@ Route::group(['prefix' => 'pelajar', 'as' => 'pelajar.', 'namespace' => 'Student
     // Urus Transkrip
     Route::resource('transkrip', 'TranscriptsController');
     //Urus Muat Turun Transkrip
-    Route::get('pdf/resit', 'TranscriptsController@showReceiptPDF')->name('showReceiptPDF');
+    Route::get('/pdf', 'TranscriptsController@showReceiptPDF')->name('showReceiptPDF');
     // Muat Turun Fail
     Route::get('fail/{id}/muat-turun', 'FilesController@download')->name('fail.download');
     // Delete Fail
