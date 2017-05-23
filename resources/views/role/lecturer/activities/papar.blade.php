@@ -66,14 +66,14 @@
 
             <tr>
                 <td class="col-md-2"><strong>Markah Merit</strong></td>
-                <td>{{ $activity->user->markahMerit->markah }}</td>
+                <td>{{ $activity->markahMerit->markah or '' }}</td>
             </tr>
             <tr>
                 <td class="col-md-2"><strong>Dimuatnaik oleh</strong></td>
                 <td>{{ $activity->user->name }}</td>
             </tr>
         </table>
-        
+
     </div>
 </div>
 @endsection

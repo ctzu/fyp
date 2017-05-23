@@ -59,8 +59,8 @@ class ActivitiesController extends Controller
      */
     public function show($id)
     {
-        $activity = Activity::with('club', 'level', 'achievement', 'committee', 'status', 'files', 'user')->findOrFail($id);
-        $markah = $activity->user()->first()->markahMerit()->where('activity_id', $activity->id)->first();
+        $activity = Activity::with('club', 'level', 'achievement', 'committee', 'status', 'files', 'user', 'markahMerit')->findOrFail($id);
+        $markah = $activity->markahMerit;
         return view('role.lecturer.activities.show', compact('activity', 'markah'));
     }
         /**
@@ -71,8 +71,9 @@ class ActivitiesController extends Controller
      */
     public function papar($id)
     {
-        $activity = Activity::with('club', 'level', 'achievement', 'committee', 'status', 'files', 'user.markahMerit')->findOrFail($id);
-        return view('role.lecturer.activities.papar', compact('activity'));
+        $activity = Activity::with('club', 'level', 'achievement', 'committee', 'status', 'files', 'user', 'markahMerit')->findOrFail($id);
+        $markah = $activity->markahMerit;
+        return view('role.lecturer.activities.papar', compact('activity', 'markah'));
     }
 
     /**
