@@ -115,7 +115,7 @@
             <tfoot>
                 <tr>
                     <td class="content" colspan="4" align="right">
-                        @if ($transcripts->count() == 3)
+                        @if ($transcripts->count() >= 3)
                             <strong>Status:&nbsp;</strong>Pelajar Aktif
                         @else
                             <strong>Status:&nbsp;</strong>Pelajar Tidak Aktif

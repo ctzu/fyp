@@ -51,7 +51,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Log Masuk</a></li>
-                            <li><a href="{{ route('register') }}">Daftar Masuk</a></li>
+                            <li><a href="{{ route('register') }}"></a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

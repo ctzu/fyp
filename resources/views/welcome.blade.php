@@ -14,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>e-Merit FTSM UKM</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -53,10 +53,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 <li>
-                        <a href="#about">Tentang Kami</a>
+                        <a href="#about"></a>
                     </li>
                     <li>
-                        <a href="#services">Perkhidmatan</a>
+                        <a href="#services">Tentang Kami</a>
                     </li>
                     <li>
                         <a href="#contact">Hubungi Kami</a>
@@ -68,8 +68,8 @@
                         <a class="navbar-brand topnav" href="{{ url('/home') }}"><span class="glyphicon glyphicon-home">Laman Utama</span></a>
                     @else
                         <a class="navbar-brand topnav" href="{{ url('/login') }}">Log Masuk</a>
-                        <a class="navbar-brand topnav">|</a>
-                        <a class="navbar-brand topnav" href="{{ url('/register') }}">Daftar Masuk</a>
+                        <a class="navbar-brand topnav"></a>
+                        <a class="navbar-brand topnav" href="{{ url('/register') }}"></a>
                     @endif
                 </div>
                 </li>
@@ -112,14 +112,15 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Congratulations Robot Soccer:<br>Won 1st place at SEC Honours 2014</h2>
-                    <p class="lead">Congratulations to <a target="_blank" href="http://join.deathtothestockphoto.com/">Robot Soccer Team</a> won the first place SEC Honours Technology Awards at SEC Honours Gala Awards Night 2014. </p>
+                    <h2 class="section-heading">KARNIVAL INOVASI DIGITAL 2017<br>Fakulti Teknologi & Sains Maklumat</h2>
+                    <p>Sejajar dengan keperluan KRA 1 (Graduan Beraspirasi Kebangsaan, Berkompeten, Berdaya Saing dan Inovatif), Karnival Inovasi Digital (KID) 2017 bertujuan untuk memberi ruang dan peluang kepada pelajar tahun akhir memperlihat kemampuan mereka dalam menghasil dan membentang projek yang berinovasi. Projek dibentang bukan sahaja kepada penyelia dan penilai yang terdiri dari kalangan pensyarah dan rakan sebaya, tetapi juga kepada rakan industri dan rakan komuniti setempat.
+                    </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/robot-bg.jpg" alt="">
+                <br><br><br>
+                    <img class="" src="img/kid2017.jpg" width="500" height="300">
                 </div>
             </div>
-
         </div>
         <!-- /.container -->
 
@@ -134,11 +135,10 @@
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Congratulations Robot Soccer Team</h2>
-                    <p class="lead">Congratulations to Robot Soccer Team won 3 medals at 19th FIRA Roboworld Cup 2014 Beijing, China>PSDCovers</p>
+                    <h3 class="section-heading">SPECIAL INTEREST GROUP(SIG)</h3>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/rugby.jpg" alt="">
+                    <img class="img-responsive" src="img/sig5.jpg" alt="">
                 </div>
             </div>
 
@@ -156,11 +156,11 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                    <h2 class="section-heading">CABARAN DIGITAL FTSM </h2><h4>Fakulti Teknologi & Sains Maklumat</h4>
+                    
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
+                    <img class="img-responsive" src="img/cdftsm.jpg" width="50%">
                 </div>
             </div>
 
