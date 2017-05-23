@@ -96,7 +96,7 @@
             @yield('content')
 
 
-            <footer style="margin: 50px 0px">
+            <footer style="margin: 100px 0 60px 0">
                 <div class="row">
                     <hr>
                     <div class="col-lg-12">
