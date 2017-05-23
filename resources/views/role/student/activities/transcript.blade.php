@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-12 pull-right">
-                    
+
                 </div>
             </div>
             <div class="row">
@@ -30,10 +30,8 @@
             <div class="row">
                 <div class="col-md-6 pull-right" style="text-align: right">
                     <a href="{{ url('/papar', $activity->id) }}" target="_blank" class="btn btn-primary">Muat turun resit</a>
-
                 </div>
             </div>
         </div>
-        <div class="col-md-2"></div>
     </div>
 @endsection

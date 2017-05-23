@@ -94,7 +94,18 @@
             </div>
             @include('flash::message')
             @yield('content')
+
+
+            <footer style="margin: 50px 0px">
+                <div class="row">
+                    <hr>
+                    <div class="col-lg-12">
+                    <p class="copyright text-muted small">2017 &copy; e-Merit FTSM UKM. Hak Cipta Terpelihara</p>
+                    </div>
+                </div>
+            </footer>
         </div>
+
     </div>
 
     <!-- Scripts -->
