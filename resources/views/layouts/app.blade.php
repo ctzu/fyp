@@ -86,7 +86,10 @@
                         <span class="pull-right">@yield('page-button')</span>
                     </h2>
 
-                    <hr>
+                    @unless(request()->is('login'))
+                        <hr>
+                    @endunless
+
                 </div>
             </div>
             @include('flash::message')
