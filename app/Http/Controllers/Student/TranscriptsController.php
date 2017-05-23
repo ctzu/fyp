@@ -12,9 +12,9 @@ use App\ActivityCommittee;
 use App\ActivityAchievement;
 use App\ActivityStatus;
 use App\StudentStatus;
+use App\MarkahMerit;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Support\Facades\Auth;
-
 
 class TranscriptsController extends Controller
 {
@@ -35,10 +35,8 @@ class TranscriptsController extends Controller
      */
     public function index()
     {
-        // $transcripts = auth()->user()->transcripts()->latest()->paginate();
-        
-        $transcripts = Activity::with('user')->where('created_by',Auth::user()->id)->get();
-        // dd($transcripts);
+        $transcripts = MarkahMerit::with('user', 'activity.committee')->where('user_id', auth()->id())->get();
+
         return view('role.student.transcripts.index', compact('transcripts'));
     }
 
@@ -75,10 +73,13 @@ class TranscriptsController extends Controller
         return view('role.student.transcripts.show', compact('activity'));
     }
 
+     /**
+      *
+      */
     public function showReceiptPDF() {
-        $activities = Activity::with('user')->where('created_by',Auth::user()->id)->get();
+        $transcripts = MarkahMerit::with('user', 'activity.committee')->where('user_id', auth()->id())->get();
         $pdf = app('dompdf.wrapper');
-        $pdf->loadView('role.student.show',compact('activities'));
+        $pdf->loadView('role.student.transcripts.show', compact('transcripts'));
         return $pdf->stream('show.pdf');
     }
 

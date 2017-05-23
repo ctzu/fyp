@@ -3,7 +3,7 @@
 @section('page-title', 'Senarai Aktiviti Yang Terlibat')
 
 @section('page-button')
-<a href="{{ url('/pdf') }}" target="_blank" class="btn btn-primary">Muat turun</a>
+<a href="{{ route('pelajar.showReceiptPDF') }}" target="_blank" class="btn btn-primary">Muat turun</a>
 @endsection
 
 @section('content')
@@ -22,9 +22,9 @@
                 @forelse ($transcripts as $transcript)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $transcript->name }}</td>
-                        <td>{{ $transcript->committee->name }}</td>
-                        <td>{{ $transcript->user->markahMerit->markah}}</td>
+                        <td>{{ $transcript->activity->name }}</td>
+                        <td>{{ $transcript->activity->committee->name }}</td>
+                        <td>{{ $transcript->markah or 'Tiada Markah' }}</td>
                     </tr>
                 @empty
                     <tr>

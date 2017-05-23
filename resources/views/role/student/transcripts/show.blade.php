@@ -1,101 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-<style>
-    * {
-        font-family: sans-serif;
-        font-size: 12px;
-    }
-    .logo h1 {
-        font-family: sans-serif;
-        font-size: 36px;
-        margin: 0px;
-        color: #2980b9;
-        text-shadow: 1px 1px #CCCCCC;
-    }
-    .logo {
-        text-align: center;
-    }
-    .logo span {
-        font-size: 30px;
-        font-style: italic;
-        color: #848484;
-    }
-    .logo p{
-        margin: 0px;
-        color: #B1AEAE;
-        padding: 0px;
-        font-family: sans-serif;
-        font-size: 12px;
-        letter-spacing: 1px;
-    }
-    .row {
-        overflow: hidden;
-        clear: both;
-    }
-    .col-md-6 {
-        width: 50%;
-        float: left;
-    }
-    .address-company {
-        text-align: right;
-    }
-    .address-company h4 {
-        margin: 0px;
-        padding: 0px;
-    }
-</style>
-<body>
-<table border="0" width="100%">
-    <tr>
-        <td class="logo">
-            <h1>UNIVERSITI KEBANGSAAN MALAYSIA<span></span></h1>
-            <p>Jadi Pelajar yang Produktif!</p>
-        </td>
-        <td class="address-company" style="text-align: right">
-            <h4>Universiti Kebangsaan Malaysia </h4>
-            <p style="margin-top: 0px;">
-                Bandar Baru Bangi <br/>
-                Malaysia<br/>
-                <br/>
-                T +33 555 444 333<br/><br/>
-            </p>
-        </td>
-    </tr>
-</table>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
 
-<br><br>
-<table class="table table-bordered" border="1" style="border-collapse: collapse; width: 80%; border-color: #adadad;">
-    <thead style="background: #EAEAEA;">
-        @forelse($activities as $activity)
-    <tr>
-        <td>{{ $loop->iteration }}</td>>
-    </tr>
-     <tr>
-        <td width="40%" style="text-align: right; font-size: 18px;padding: 10px;"> Nama Pelajar  : </td>
-        <td width="60%" style="text-align: left; font-size: 18px; font-weight: bold; padding: 10px;">{{ $activity->user->name}}</td>
-    </tr>
-    
-    <tr>
-    <tr>
-       <td width="40%" style="text-align: right; font-size: 18px;padding: 10px;"> Nama Aktiviti : </td>
-        <td width="60%" style="text-align: left; font-size: 18px; font-weight: bold; padding: 10px;"> {{ $activity->name}}</td>
-    </tr>
-    <tr>
-        <td width="40%" style="text-align: right; font-size: 18px;padding: 10px;">Jawatankuasa : </td>
-        <td width="60%" style="text-align: left; font-size: 18px; font-weight: bold; padding: 10px;"> {{ $activity->committee->name}}</td>
-    </tr>
-    <tr>
-        <td width="40%" style="text-align: right; font-size: 18px;padding: 10px;">Markah Merit : </td>
-        <td width="60%" style="text-align: left; font-size: 18px; font-weight: bold; padding: 10px;"> {{ $activity->user->markahMerit->markah}}</td>
-    </tr>
-    </tr>
-    @empty
-    <tr>
-        <td colspan="5"><strong>Tiada data dijumpai.</strong></td>
-    </tr>
-    @endforelse
-    </thead>    
-</table>
+        <style type="text/css">
+        @page {
+            margin: 100px 50px;
+        }
 
-</body>
+        div.page {
+            page-break-after: always;
+        }
+
+        div.page:last-child {
+            page-break-after: never;
+        }
+
+        .full {
+            width: 100%;
+        }
+
+        .half {
+        	width: 50%;
+        }
+
+        .quad {
+            width: 25%;
+        }
+
+        table,
+        tr,
+        th,
+        td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td.content {
+        	padding: 8px 8px;
+        }
+
+        th.header {
+    		color: black;
+    		border: 1px solid black;
+            padding: 5px 5px;
+        }
+
+        .no-border {
+            border: none;
+        }
+
+        .no-padding {
+            padding: 0 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+        	text-align: right;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .bold {
+        	font-weight: bold;
+        }
+
+    	.bg-warning {
+    		background-color:#fcf8e3 ;
+    	}
+    	.text-danger {
+    		color: #d44950;
+    	}
+        .text-primary {
+    		color:#0275d8 ;
+    	}
+        </style>
+    </head>
+    <body class="page">
+        <img src="img/UKM.png" width="100%" alt="">
+        <h3 class="text-center">Universiti Kebangsaan Malaysia</h3>
+
+        <p><strong>Nama:&nbsp;</strong>{{$transcripts->first()->user->name}}</p>
+        <p><strong>No. Matrik:&nbsp;</strong>{{$transcripts->first()->user->student->students_no or '-'}}</p>
+
+        <table class="full">
+            <thead>
+                <tr>
+                    <th class="header">#</th>
+                    <th class="header">Nama Aktiviti</th>
+                    <th class="header">Jawatankuasa</th>
+                    <th class="header">Markah</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($transcripts as $transcript)
+                    <tr>
+                        <td class="content">{{ $loop->iteration }}</td>
+                        <td class="content">{{ $transcript->activity->name }}</td>
+                        <td class="content">{{ $transcript->activity->committee->name }}</td>
+                        <td class="content">{{ $transcript->markah }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="content" colspan="4" align="right">
+                        @if ($transcripts->count() == 3)
+                            <strong>Status:&nbsp;</strong>Pelajar Aktif
+                        @else
+                            <strong>Status:&nbsp;</strong>Pelajar Tidak Aktif
+                        @endif
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+    </body>
 </html>

@@ -16,4 +16,20 @@ class MarkahMerit extends Model
         'activity_id',
         'markah'
     ];
+
+    /**
+     * Get user
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
+     * Get activity
+     */
+    public function activity()
+    {
+        return $this->belongsTo(Activity::class, 'activity_id');
+    }
 }
